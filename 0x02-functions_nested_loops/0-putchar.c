@@ -2,12 +2,12 @@
 
 /**
  * main - prints putchar
- *
+ * prints _putchar followed by a new line
  * Return: always 0
  */
 int main(void)
 {
-	putchar('');
+	_putchar('_');
 	_putchar('p');
 	_putchar('u');
 	_putchar('t');
