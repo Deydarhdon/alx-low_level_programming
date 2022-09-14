@@ -7,17 +7,23 @@ include "main.h"
  */
 void jack_bauer(void)
 {
-	int hour, minute;
-	for (hour = 0; hour <= 23; hour++)
+	int i, j;
+
+	i = 0;
+
+	while (i < 24)
 	{
-		for (minute = 0; minute <= 59; minute++)
+		j = 0;
+		while (j < 60)
 		{
-		_putchar((hour / 10) + '0');
-			_putchar((hour % 10) + '0');
+			_putchar((i / 10) + '0');
+			_putchar((i % 10) + '0');
 			_putchar(':');
-			_putchar((minute / 10) + '0');
-			_putchar((minute % 10) + '0');
+			_putchar((j / 10) + '0');
+			_putchar((j % 10) + '0');
 			_putchar('\n');
+			j++;
 		}
+		i++;
 	}
 }
