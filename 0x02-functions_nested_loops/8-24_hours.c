@@ -1,10 +1,19 @@
-include "main.h"
+#include "main.h"
 
 /**
+ *
  * jack_bauer - prints every minute of the day of Jack Bauer
- * Description: prints a list of time
- * Return: Always 0.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * Return: every minute of the day of Jack Bauer
+ *
  */
+
 void jack_bauer(void)
 {
 	int i, j;
