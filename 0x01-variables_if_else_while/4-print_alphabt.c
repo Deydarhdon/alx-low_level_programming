@@ -8,12 +8,18 @@
  */
 int main(void)
 {
-	int ch;
+	char alpha = 'a';
 
-	for (ch = 'a'; ch <= 'z'; ch++)
-		putchar(ch);
-	for (ch = 'A'; ch <= 'Z'; ch++)
-		putchar(ch);
+	while (alpha <= 'z')
+	{
+		if ((alpha != 'q') && (alpha != 'e'))
+		{
+			putchar(alpha);
+		}
+		alpha++;
+	}
 	putchar('\n');
+
 	return (0);
 }
+
