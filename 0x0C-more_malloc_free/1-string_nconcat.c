@@ -1,51 +1,62 @@
-i#include "main.h"
-
 #include <stdlib.h>
 
+#include "main.h"
+
 /**
- * string_nconcat - a function that concatenates two strings
- * @s1 : pointer to string
- * @s2 : pointer to string
- * @n : int
- * Return: pointer to string
+ * _strlen - compute length of a string
+ * @s: string to compute length from
+ * Return: length of string
+ */
+
+unsigned int _strlen(char *s)
+
+{
+	unsigned int len = 0;
+
+	while (*s++)
+		len++;
+	return (len);
+}
+
+/**
+ * string_nconcat - allocate memory for string concat
+ * @s1: string to concat with s2
+ * @s2: string to concat to s1
+ * @n: number of characters of s2 to concat with s1
+ * Return: pointer to allocated memory
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 {
-	unsigned int x, y, i, j;
-	char *s;
+	unsigned int i, len1 = 0, len2 = 0;
+	char *p;
 
 	if (s1 == NULL)
-	{
 		s1 = "";
-	}
 	if (s2 == NULL)
-	{
 		s2 = "";
-	}
-	for (x = 0; s1[x] != '\0'; x++)
-		;
-	for (y = 0; s2[y] != '\0'; y++)
-		;
-	if (n >= y)
-	{
-		n = y;
-	}
-	s = malloc(sizeof(char) * (x + n + 1));
-	if (s == NULL)
-	{
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
+	if (n > len2)
+		n = len2;
+	p = malloc(len1 + n + 1);
+	if (p == NULL)
 		return (NULL);
-	}
-	for (i = 0; s1[i] != '\0'; i++)
+	for (i = 0; i < len1 + n; i++)
 	{
-		s[i] = s1[i];
+		if (*s1)
+		{
+			p[i] = *s1;
+			s1++;
+		}
+		else
+		{
+			p[i] = *s2;
+			s2++;
+		}
 	}
-	for (j = x; j < x + n; j++)
-	{
-		s[j] = s2[j - x];
-	}
-	s[j] = '\0';
-	return (s);
+	p[i] = '\0';
+	return (p);
 }
 
